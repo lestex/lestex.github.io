@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+    <title>Andrey Larin</title>
+    <meta
+      name="description"
+      content="Platform engineer in Atlanta. 20+ years building production infrastructure on Kubernetes, Terraform, AWS and GCP, with a focus on observability, policy-as-code and secure AI-agent tooling in regulated finance."
+    />
+    <link rel="canonical" href="https://alarin.dev/" />
+
+    <link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="android-icon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="manifest" href="manifest.json" />
+
+    <meta name="msapplication-config" content="browserconfig.xml" />
+    <meta name="msapplication-TileColor" content="#000000" />
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#000000" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://alarin.dev/" />
+    <meta property="og:title" content="Andrey Larin" />
+    <meta
+      property="og:description"
+      content="Platform engineer in Atlanta. 20+ years building production infrastructure on Kubernetes, Terraform, AWS and GCP, with a focus on observability, policy-as-code and secure AI-agent tooling in regulated finance."
+    />
+    <meta property="og:site_name" content="alarin.dev" />
+    <meta property="og:locale" content="en_US" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Andrey Larin" />
+    <meta
+      name="twitter:description"
+      content="Platform engineer in Atlanta. 20+ years building production infrastructure on Kubernetes, Terraform, AWS and GCP."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+
+    <style>
+      :root {
+        --colorBackground: 255, 255, 255;
+        --colorText: 0, 0, 0;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --colorBackground: 0, 0, 0;
+          --colorText: 255, 255, 255;
+        }
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        min-height: 100%;
+        background-color: rgb(var(--colorBackground));
+        color: rgb(var(--colorText));
+        font-family: "Share Tech Mono", monospace;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+        padding-left: max(1rem, env(safe-area-inset-left));
+        padding-right: max(1rem, env(safe-area-inset-right));
+        padding-bottom: max(1rem, env(safe-area-inset-bottom));
+      }
+
+      a {
+        color: rgb(var(--colorText));
+        text-decoration: underline dotted rgb(var(--colorText)) 1px;
+      }
+      a:hover,
+      a:focus {
+        color: rgba(var(--colorText), 0.5);
+      }
+      a:focus-visible {
+        outline: 1px solid rgb(var(--colorText));
+      }
+
+      p {
+        margin: 1rem 0;
+      }
+
+      header h1 {
+        font-size: 2rem;
+        text-align: center;
+        margin: 1rem 0;
+      }
+      header p {
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      main {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 22rem;
+      }
+
+      .terminal {
+        margin: 2rem 0;
+        width: 100%;
+      }
+      .terminal__input_block {
+        display: flex;
+        align-items: baseline;
+      }
+      .terminal__input_decoration {
+        margin-right: 1rem;
+      }
+      .terminal__input_wrapper {
+        flex: 1;
+        min-width: 0;
+        position: relative;
+      }
+      .terminal__input,
+      .terminal__input_shadow {
+        font: inherit;
+        font-size: 1rem;
+        width: 100%;
+        min-width: 0;
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid transparent;
+        padding: 0;
+      }
+      .terminal__input {
+        color: rgb(var(--colorText));
+        position: relative;
+        z-index: 10;
+      }
+      .terminal__input::placeholder {
+        color: rgb(var(--colorText));
+        opacity: 0.5;
+      }
+      .terminal__input:focus,
+      .terminal__input:hover {
+        outline: none;
+        border-bottom-color: rgb(var(--colorText));
+      }
+      .terminal__input_shadow {
+        position: absolute;
+        inset: 0;
+        color: rgb(var(--colorText));
+        border-bottom-color: rgb(var(--colorText));
+        opacity: 0.5;
+        pointer-events: none;
+        z-index: 1;
+      }
+      .terminal__input_wrapper.autocomplete {
+        animation: shake 200ms;
+      }
+
+      .terminal__res {
+        padding-left: 1.5rem;
+      }
+      .terminal__res ul {
+        padding-left: 1rem;
+        margin: 0;
+      }
+
+      footer {
+        font-size: 0.7rem;
+        margin: 1rem 0;
+      }
+
+      /* https://css-tricks.com/snippets/css/shake-css-keyframe-animation/ */
+      @keyframes shake {
+        10%,
+        90% {
+          transform: translate3d(-1px, 0, 0);
+        }
+        20%,
+        80% {
+          transform: translate3d(2px, 0, 0);
+        }
+        30%,
+        50%,
+        70% {
+          transform: translate3d(-4px, 0, 0);
+        }
+        40%,
+        60% {
+          transform: translate3d(4px, 0, 0);
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .terminal__input_wrapper.autocomplete {
+          animation: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Andrey Larin</h1>
+        <p>Platform engineer</p>
+        <p>Atlanta, US</p>
+      </header>
+      <section id="text-version">
+        <p>
+          20+ years building and running production infrastructure on Kubernetes, Terraform, AWS and GCP. Focused on observability, policy-as-code and secure
+          tooling for AI agents in regulated finance.
+        </p>
+        <p>Find me on <a href="https://github.com/lestex" rel="noopener">GitHub</a>.</p>
+      </section>
+      <section class="terminal">
+        <div class="terminal__input_block">
+          <span class="terminal__input_decoration" aria-hidden="true">&gt;</span>
+          <span id="terminal-input-wrapper" class="terminal__input_wrapper">
+            <input
+              id="terminal-input"
+              class="terminal__input"
+              aria-label="Terminal command"
+              placeholder="Type 'help' for the list of commands"
+              autocomplete="off"
+              autocapitalize="off"
+              spellcheck="false"
+            />
+            <input id="terminal-shadow" class="terminal__input_shadow" tabindex="-1" aria-hidden="true" readonly />
+          </span>
+        </div>
+        <div id="terminal-res" class="terminal__res" aria-live="polite"></div>
+      </section>
+    </main>
+    <footer>&copy; Andrey Larin</footer>
+    <script>
+      const BIO =
+        "Platform engineer with 20+ years in production infrastructure. Kubernetes and Terraform on AWS and GCP, OpenTelemetry/Loki observability, policy-as-code, and audited tooling for AI agents on payment platforms. Python and Go.";
+
+      // Single source of truth for commands that open a link.
+      const links = {
+        code: { description: "Open my GitHub", message: "Opened a new tab with my GitHub", href: "https://github.com/lestex" },
+      };
+
+      const openLink = (resNode, { message, href }) => {
+        resNode.textContent = message;
+        // "noopener" makes window.open return null, so there is nothing to focus.
+        window.open(href, "_blank", "noopener");
+      };
+
+      const commands = {
+        help: {
+          description: "List available commands",
+          handler: (resNode) => {
+            const list = document.createElement("ul");
+            for (const [name, { description }] of Object.entries(commands)) {
+              const li = document.createElement("li");
+              li.textContent = `${name} - ${description}`;
+              list.appendChild(li);
+            }
+            resNode.appendChild(list);
+          },
+        },
+        about: {
+          description: "Show my bio",
+          handler: (resNode) => {
+            resNode.textContent = BIO;
+          },
+        },
+        ...Object.fromEntries(Object.entries(links).map(([name, link]) => [name, { description: link.description, handler: (resNode) => openLink(resNode, link) }])),
+      };
+
+      const secretCommands = {
+        "red pill": {
+          handler: (resNode) => {
+            resNode.textContent = "Wake up, Neo...";
+          },
+        },
+      };
+      console.log(`Try these secret commands: ${Object.keys(secretCommands).join(", ")}`);
+
+      const unknownCommandHandler = (resNode) => {
+        resNode.textContent = "Unknown command";
+      };
+
+      // Own-property lookup only, so inputs like "constructor" or "__proto__" are unknown commands.
+      const lookupCommand = (name) => {
+        if (Object.hasOwn(commands, name)) return commands[name];
+        if (Object.hasOwn(secretCommands, name)) return secretCommands[name];
+        return undefined;
+      };
+
+      class CommandHistory {
+        constructor(maxSize) {
+          this.data = [];
+          this.pointer = null;
+          this.maxSize = maxSize;
+        }
+
+        append(item) {
+          this.pointer = null;
+          const existing = this.data.indexOf(item);
+          if (existing !== -1) this.data.splice(existing, 1);
+          this.data.push(item);
+          if (this.data.length > this.maxSize) this.data.shift();
+        }
+
+        // Returns undefined when there is nothing to show.
+        prev() {
+          if (!this.data.length) return undefined;
+          this.pointer = this.pointer === null ? this.data.length - 1 : Math.max(0, this.pointer - 1);
+          return this.data[this.pointer];
+        }
+
+        // Past the newest entry returns "" (empty line), like a shell.
+        next() {
+          if (this.pointer === null) return undefined;
+          if (this.pointer >= this.data.length - 1) {
+            this.pointer = null;
+            return "";
+          }
+          this.pointer++;
+          return this.data[this.pointer];
+        }
+      }
+      const commandHistory = new CommandHistory(10);
+
+      const terminalInput = document.getElementById("terminal-input");
+      const terminalShadow = document.getElementById("terminal-shadow");
+      const terminalRes = document.getElementById("terminal-res");
+      const terminalInputWrapper = document.getElementById("terminal-input-wrapper");
+
+      const findMatchingCommand = (value) => (value ? Object.keys(commands).find((name) => name.startsWith(value) && name !== value) : undefined);
+
+      const setTerminalAndShadow = (value) => {
+        terminalInput.value = value;
+        terminalShadow.value = value;
+      };
+
+      terminalInput.addEventListener(
+        "input",
+        () => {
+          terminalInputWrapper.classList.remove("autocomplete");
+          terminalShadow.value = findMatchingCommand(terminalInput.value) ?? terminalInput.value;
+        },
+        { passive: true }
+      );
+
+      terminalInput.addEventListener("keydown", (e) => {
+        switch (e.key) {
+          case "ArrowRight":
+          case "Tab": {
+            const match = findMatchingCommand(terminalInput.value);
+            if (match) {
+              e.preventDefault();
+              setTerminalAndShadow(match);
+              terminalInputWrapper.classList.add("autocomplete");
+            }
+            break;
+          }
+          case "ArrowUp":
+          case "ArrowDown": {
+            e.preventDefault();
+            const item = e.key === "ArrowUp" ? commandHistory.prev() : commandHistory.next();
+            if (item !== undefined) setTerminalAndShadow(item);
+            break;
+          }
+          case "Enter": {
+            e.preventDefault();
+            const input = terminalInput.value.trim().toLowerCase();
+            if (!input) return;
+
+            commandHistory.append(input);
+            terminalRes.textContent = "";
+            (lookupCommand(input)?.handler ?? unknownCommandHandler)(terminalRes);
+            setTerminalAndShadow("");
+            break;
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
